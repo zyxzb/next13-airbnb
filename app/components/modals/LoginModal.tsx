@@ -39,7 +39,6 @@ const LoginModal = () => {
 
     // change status later
     signIn('credentials', { ...data, redirect: false }).then((callback) => {
-      console.log(callback);
       if (callback?.ok) {
         toast.success('Logged in');
         router.refresh();

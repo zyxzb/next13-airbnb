@@ -2,6 +2,7 @@
 
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { User } from '@prisma/client';
+import useFavorite from '../hooks/useFavorite';
 
 interface HeartButtonProps {
   listingId: string;
@@ -9,8 +10,10 @@ interface HeartButtonProps {
 }
 
 const HeartButton = ({ listingId, currentUser }: HeartButtonProps) => {
-  const hasFavorites = false;
-  const toggleFavorite = () => {};
+  const { hasFavorite, toggleFavorite } = useFavorite({
+    listingId,
+    currentUser,
+  });
 
   return (
     <div
@@ -23,7 +26,7 @@ const HeartButton = ({ listingId, currentUser }: HeartButtonProps) => {
       />
       <AiFillHeart
         size={24}
-        className={hasFavorites ? 'fill-rose-500' : 'fill-neutral-500/70'}
+        className={hasFavorite ? 'fill-rose-500' : 'fill-neutral-500/70'}
       />
     </div>
   );
