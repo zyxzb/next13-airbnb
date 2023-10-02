@@ -9,13 +9,13 @@ interface IParams {
 
 const ListingPage = async ({ params }: { params: IParams }) => {
   const listing = await getListing(params);
-  const currentUses = await getCurrentUser();
+  const currentUser = await getCurrentUser();
 
   if (!listing) {
     return <EmptyState />;
   }
 
-  return <ListingClient listing={listing} currentUser={currentUses} />;
+  return <ListingClient listing={listing} currentUser={currentUser} />;
 };
 
 export default ListingPage;
