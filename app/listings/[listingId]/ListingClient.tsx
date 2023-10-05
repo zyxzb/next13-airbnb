@@ -45,8 +45,14 @@ const ListingClient = ({
       return loginModal.onOpen();
     }
     setIsLoading(true);
+    console.log(
+      totalPrice,
+      dateRange.startDate,
+      dateRange.endDate,
+      listing?.id,
+    );
     axios
-      .post('/api/reservations,', {
+      .post('/api/reservations', {
         totalPrice,
         startDate: dateRange.startDate,
         endDate: dateRange.endDate,
@@ -125,6 +131,7 @@ const ListingClient = ({
                 dateRange={dateRange}
                 onSubmit={onCreateReservation}
                 disabledDates={disabledDates}
+                disabled={isLoading}
               />
             </div>
           </div>
