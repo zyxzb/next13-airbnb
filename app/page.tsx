@@ -5,7 +5,7 @@ import Container from './components/Container';
 import EmptyState from './components/EmptyState';
 import ListingCard from './components/listings/ListingCard';
 
-const Home = async () => {
+const HomePage = async () => {
   const listings = await getListings();
   const currentUser = await getCurrentUser();
 
@@ -28,4 +28,4 @@ const Home = async () => {
   );
 };
 
-export default Home;
+export default HomePage;
