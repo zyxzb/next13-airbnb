@@ -24,11 +24,7 @@ const PropertiesPage = async () => {
     );
   }
 
-  return (
-    <div className=''>
-      <PropertiesClient listings={listings} currentUser={currentUser} />
-    </div>
-  );
+  return <PropertiesClient listings={listings} currentUser={currentUser} />;
 };
 
 export default PropertiesPage;

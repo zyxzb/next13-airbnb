@@ -45,12 +45,6 @@ const ListingClient = ({
       return loginModal.onOpen();
     }
     setIsLoading(true);
-    console.log(
-      totalPrice,
-      dateRange.startDate,
-      dateRange.endDate,
-      listing?.id,
-    );
     axios
       .post('/api/reservations', {
         totalPrice,

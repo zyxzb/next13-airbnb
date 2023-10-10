@@ -23,7 +23,7 @@ const Counter = ({ title, subtitle, value, onChange }: CounterProps) => {
   }, [value, onChange]);
 
   return (
-    <div className='flex items-center justify-between'>
+    <div className='flex items-center justify-between select-none'>
       <div className='flex flex-col'>
         <div className='font-medium'>{title}</div>
         <div className='font-light text-gray-600'>{subtitle}</div>

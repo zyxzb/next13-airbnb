@@ -11,8 +11,6 @@ export const DELETE = async (
   { params }: { params: IParams },
 ) => {
   const currentUser = await getCurrentUser();
-  console.log('params', params);
-  console.log('user', currentUser);
 
   if (!currentUser) {
     return NextResponse.error();
