@@ -8,12 +8,14 @@ interface EmptyStateProps {
   title?: string;
   subtitle?: string;
   showReset?: boolean;
+  showBack?: boolean;
 }
 
 const EmptyState = ({
   title = 'No exact marches',
   subtitle = 'Try changing or removing some of Your filters',
   showReset,
+  showBack,
 }: EmptyStateProps) => {
   const router = useRouter();
 
@@ -27,6 +29,9 @@ const EmptyState = ({
             label='Remove all filters'
             onClick={() => router.push('/')}
           />
+        )}
+        {showBack && (
+          <Button outline label='Go back' onClick={() => router.back()} />
         )}
       </div>
     </div>
